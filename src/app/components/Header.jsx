@@ -11,7 +11,7 @@ useEffect(() => {
   }else{}
 
  
-},[time])
+},[time ])
 
   return (
     <div onClick={()=>settime(true)}>Header</div>
