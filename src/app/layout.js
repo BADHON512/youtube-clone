@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body suppressHydrationWarning={true} className={`${inter.className} bg-[#05050f] text-white`}>
+      <body suppressHydrationWarning={true} className={`${inter.className} bg-[#0F0F0F] text-white`}>
          {children}
          <ToastContainer position='bottom-center'/>
 

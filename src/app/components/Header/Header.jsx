@@ -25,11 +25,11 @@ export default function Header() {
                 {/* header middle part start */}
                 <div className=' w-[50%] flex gap-x-4 h-full items-center'>
                     <div className='w-full relative '>
-                        <input type="text" className='w-full h-[35px] bg-[#dbd7d7ad] outline-none border
+                        <input type="text" className='w-full h-[35px] bg-[#121212] outline-none border
                          border-gray-300 focus:border-blue-600 appearance-none rounded-full' />
-                         <div className='h-full bg-red-500 absolute top-0 right-0 w-16 rounded-r-full cursor-pointer'>
+                         <div className='h-full bg-[#212121] absolute top-0 right-0 w-16 rounded-r-full cursor-pointer'>
                             <div className='h-full w-full flex justify-center items-center'>
-                            <AiOutlineSearch size={30}/>
+                            <AiOutlineSearch size={20} color=''/>
                             </div>
                          </div>
                     </div>
