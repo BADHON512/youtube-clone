@@ -4,6 +4,9 @@ import Header from "./components/Header/Header";
 import SideMenu from "./components/Header/SideMenu";
 import { AnimatePresence } from "framer-motion";
 import Microphone from "./components/Header/Microphone";
+import Upload from "./components/Header/Upload";
+import Notification from "./components/Header/Notification";
+import Account from "./components/Header/Account";
 
 export const OpenClose = createContext();
 
@@ -20,7 +23,8 @@ function App() {
   console.log(Open);
   return (
     <OpenClose.Provider value={{badhon}}>
-      <div className="bg-[#0F0F0F] text-white">
+ <div>
+ <div className="bg-[#1b1a1a] text-white">
         {/* heder component */}
         <div className="h-[8vh] w-full">
           <Header />
@@ -28,18 +32,29 @@ function App() {
         {/* heder component */}
 
         {/* SideMenu Start */}
-        <div className="min-h-[100vh] w-[22vw]">
+  
           <AnimatePresence>{Open == 1 && <SideMenu />}</AnimatePresence>
-        </div>
+        
         {/* SideMenu End */}
       </div>
         {/* heder component */}
-        <div className="h-full w-full">
+  
         {Open == 2 && <Microphone />}
-        </div>
+     
+        {Open == 3 && <Upload />}
+      
+       
+        {Open == 4 && <Notification />}
+       
+    
+        {Open == 5 && <Account />}
+        
         {/* heder component */}
+ </div>
 
-
+   <div className="h-[90vh] w-full bg-yellow-500">
+    <h1>bahon</h1>
+   </div>
     </OpenClose.Provider>
   );
 }

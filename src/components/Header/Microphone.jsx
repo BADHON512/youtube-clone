@@ -15,7 +15,18 @@ export default function Microphone() {
                <div onClick={()=>badhon(2)} className="h-[35px] w-[35px] cursor-pointer bg-gray-500 rounded-full flex justify-center items-center">
                <RxCross1 size={20}/>
                </div>
+              
             </div>
+            <div className="p-2  ">
+                <h1 className="text-[25px]">Listening...</h1>
+              
+               </div>
+
+               <div className=" flex w-full h-[30vh] justify-center items-end">
+                <div className="h-[100px] w-[100px] "> 
+                <img src="/src/assets/recording.gif" className="h-full w-full rounded-full" alt="" />
+                </div>
+               </div>
       
 
         </div>

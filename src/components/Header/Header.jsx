@@ -67,13 +67,16 @@ export default function Header() {
               <BiSolidVideoPlus size={25} onClick={()=>badhon(3)} />
             </div>
 
-            <div className="h-[40px] w-[40px] hover:bg-[#acaaaa52] ] cursor-pointer rounded-full flex justify-center items-center">
+            <div className="h-[40px] w-[40px] hover:bg-[#acaaaa52] ] cursor-pointer rounded-full flex justify-center items-center relative">
               {" "}
-              <IoMdNotifications size={25} onClick={()=>setOpen(4)} />
+              <IoMdNotifications size={25} onClick={()=>badhon(4)} />
+              <div className="absolute h-4 w-4 top-1 right-1 rounded-full flex justify-center items-center bg-[#ff1818]">
+                <h1 className="text-[10px]">9+</h1>
+              </div>
             </div>
             <div className="h-[40px] w-[40px] hover:bg-[#acaaaa52] ] cursor-pointer rounded-full flex justify-center items-center">
               {" "}
-              <IoMdNotifications size={25} onClick={()=>setOpen(5)} />
+              <IoMdNotifications size={25} onClick={()=>badhon(5)} />
             </div>
           </div>
           {/* header last part end */}
