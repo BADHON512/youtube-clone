@@ -1,7 +1,7 @@
 import {AiFillSetting} from "react-icons/ai"
 export default function Notification() {
   return (
-    <div className="min-h-[80vh] w-[35vw] text-white  bg-[#202124] rounded-sm fixed top-12 right-10">
+    <div className="min-h-[80vh] w-[85vw] 800px:w-[35vw] text-white  bg-[#202124] rounded-sm fixed top-12 right-2 800px:right-10">
       <div className="p-2 flex w-full justify-between">
         <h1>Notifications</h1>
         <AiFillSetting size={20}/>
@@ -9,7 +9,7 @@ export default function Notification() {
       <div className="border-t w-full border-[#e9e5e567]"/>
 
       <div className="p-3">
-          <div className="space-y-4">
+          <div className="space-y-4 ">
          <Notifications pro="/src/assets/2.jpg" src="" bg="/src/assets/2.jpg"/>
          <Notifications pro="/src/assets/3.jpg" src="" bg="/src/assets/7.jpg"/>
          <Notifications pro="/src/assets/4.jpg" src="" bg="/src/assets/4.jpg"/>
@@ -27,7 +27,7 @@ export default function Notification() {
 
  function Notifications({pro,bg}) {
   return (
-    <div className="w-full flex gap-x-3">
+    <div className="w-full flex gap-x-3 hover:bg-[#d1cccc8e] p-2 rounded-sm cursor-pointer ">
                 <div className="w-[50px]">
                     <img src={pro}  className="h-[50px] w-[50px] rounded-full" alt="errro" />
                 </div>

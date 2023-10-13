@@ -19,8 +19,8 @@ export default function Header() {
           {/* header first part start */}
           <div className=" flex gap-x-3 h-full items-center">
             <AiOutlineMenu size={30} className=" cursor-pointer" onClick={()=>badhon(1)} />
-            <BsYoutube size={30} color="#FF0000" />
-            <div className=" relative ">
+            <BsYoutube size={30} color="#FF0000" className="cursor-pointer" />
+            <div className=" hidden 800px:block relative cursor-pointer ">
               <h1 className="font-extrabold font-serif">YouTube</h1>
 
               <span className=" absolute -top-1 text-[10px] -right-3">BD</span>
@@ -47,7 +47,7 @@ export default function Header() {
                 )}
               </div>
 
-              <div className="h-[37px] bg-[#212121]  w-16 rounded-r-full cursor-pointer">
+              <div className="h-[35px] bg-[#212121]  w-16 border border-[#acabab79] rounded-r-full cursor-pointer">
                 <div className="h-full w-full flex justify-center items-center">
                   <AiOutlineSearch size={20} color="" />
                 </div>
@@ -70,8 +70,8 @@ export default function Header() {
             <div className="h-[40px] w-[40px] hover:bg-[#acaaaa52] ] cursor-pointer rounded-full flex justify-center items-center relative">
               {" "}
               <IoMdNotifications size={25} onClick={()=>badhon(4)} />
-              <div className="absolute h-4 w-4 top-1 right-1 rounded-full flex justify-center items-center bg-[#ff1818]">
-                <h1 className="text-[10px]">9+</h1>
+              <div className="absolute h-4 w-5 top-1 right-1 rounded-full flex justify-center items-center bg-[#ff1818]">
+                <h1 className="text-[13px] font-semibold">9+</h1>
               </div>
             </div>
             <div className="h-[40px] w-[40px] hover:bg-[#acaaaa52] ] cursor-pointer rounded-full flex justify-center items-center">
