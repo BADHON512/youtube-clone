@@ -7,6 +7,7 @@ import Microphone from "./components/Header/Microphone";
 import Upload from "./components/Header/Upload";
 import Notification from "./components/Header/Notification";
 import Account from "./components/Header/Account";
+import Body from "./components/Home/Body";
 
 export const OpenClose = createContext();
 
@@ -26,7 +27,7 @@ function App() {
  <div>
  <div className="bg-[#1b1a1a] text-white">
         {/* heder component */}
-        <div className="h-[8vh] w-full">
+        <div className="h-[8vh] w-full bg-black fixed top-0 ">
           <Header />
         </div>
         {/* heder component */}
@@ -52,8 +53,8 @@ function App() {
         {/* heder component */}
  </div>
 
-   <div className="h-[90vh] w-full bg-yellow-500">
-    <h1>bahon</h1>
+   <div className="min-h-[90vh] w-full bg-[#080813] text-white">
+  <Body/>
    </div>
     </OpenClose.Provider>
   );
