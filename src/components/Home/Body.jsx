@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function Body() {
+  const [Video, setVideo] = useState([])
+  console.log(Video)
     const api = 'AIzaSyBqfXD5uLqP8b83t4NqgRme6O2-vU-2lQU'; // Replace with your actual API key
     const url = "https://www.googleapis.com/youtube/v3/videos?";
     const channel = "https://www.googleapis.com/youtube/v3/channels?";
@@ -14,10 +16,12 @@ export default function Body() {
         type: 'video' // Added to specify video results
     })).then((res) => res.json())
         .then((data) => {
-            console.log(data);
+          data.items.forEach(element => {
+            getChannelIcon(element)
+          });
         })
         .catch((err) => {
-            console.log(err);
+          
         });
     
    const getChannelIcon=(video_data)=>{
@@ -27,15 +31,18 @@ export default function Body() {
         part:'snippet',
         id:video_data.snippet.channelId
     })).then((res)=>res.json())
-    .then((data)=>console.log(data))
+    .then((data)=>{
+     video_data.channelThumbnail=data.items[0].snippet.thumbnails.default.url
+     VideoCart(video_data)}
+    )
    }
 
-   const bb=[1,2,3,4,5,6,7]
+
   return (
     <div className='p-5 min-h-[90vh] w-full '>
       <div className=''>
    {
-    bb.map((v)=>(<VideoCart key={v}/>))
+   <VideoCart />
    }
       </div>
     </div>
@@ -46,12 +53,13 @@ export default function Body() {
 
 
 
- function VideoCart() {
+ function VideoCart({video_data,channelThumbnail}) {
     const title ="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, fugiat."
   return (
     <div className='min-h-[50vh] w-[30vw] '>
         <div className='h-[30vh] w-[28vw] '>
-            <img src="/src/assets/4.jpg" className='rounded-lg h-full w-full' alt="" />
+            <img src={video_data.channelThumbnail
+} className='rounded-lg h-full w-full' alt="" />
         </div>
        <div className='mt-2 p-1 flex'>
        <img src="/src/assets/7.jpg" className=' h-[50px] w-[50px] rounded-full object-cover' alt="" />
