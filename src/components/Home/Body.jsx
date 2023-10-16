@@ -37,12 +37,14 @@ export default function Body() {
     )
    }
 
-
+  const bb=[1,2,3,454,6,4,]
   return (
     <div className='p-5 min-h-[90vh] w-full '>
-      <div className=''>
+      <div className='grid grid-cols-1 gap-2 600px:grid-cols-2 600px:gap-4 800px:grid-cols-3 800px:gap-8'>
    {
-   <VideoCart />
+      
+      bb.map((v,i)=>( <VideoCart key={i} />))
+  
    }
       </div>
     </div>
@@ -53,23 +55,22 @@ export default function Body() {
 
 
 
- function VideoCart({video_data,channelThumbnail}) {
+ function VideoCart() {
     const title ="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, fugiat."
   return (
-    <div className='min-h-[50vh] w-[30vw] '>
-        <div className='h-[30vh] w-[28vw] '>
-            <img src={video_data.channelThumbnail
-} className='rounded-lg h-full w-full' alt="" />
+    <div className='min-h-[50vh] w-[99%] 600px:w-[28vw] '>
+        <div className='h-[30vh] w-full  '>
+            <img src={"/src/assets/8.jpg"} className='rounded-lg h-full w-full' alt="" />
         </div>
        <div className='mt-2 p-1 flex'>
        <img src="/src/assets/7.jpg" className=' h-[50px] w-[50px] rounded-full object-cover' alt="" />
        <div>
-        <h1 className='font-bold mx-2 text-[17px]'>{title.slice(0 ,70)+"..."}</h1>
-        <h1 className='font-bold  text-[#817e7ef1] text-[17px] mt-1'>Channel badhon</h1>
+        <h1 className='font-semibold mx-2 '>{title.slice(0 ,50)+"..."}</h1>
+        <h1 className='font-semibold   text-[#817e7ef1] text-[17px] mt-1'>Channel badhon</h1>
 
         <div className='flex gap-x-2 '>
-        <h1 className='font-bold  text-[#817e7ef1] text-[17px] mt-1'>697k Views</h1>.
-        <h1 className='font-bold  text-[#817e7ef1] text-[17px] mt-1'>59 minutes ago</h1>
+        <h1 className='font-semibold   text-[#817e7ef1]  mt-1'>697k Views</h1>.
+        <h1 className='font-semibold   text-[#817e7ef1]  mt-1'>59 minutes ago</h1>
         </div>
        </div>
        </div>

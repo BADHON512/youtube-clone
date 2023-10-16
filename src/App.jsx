@@ -53,7 +53,7 @@ function App() {
         {/* heder component */}
  </div>
 
-   <div className="min-h-[90vh] w-full bg-[#080813] text-white">
+   <div className="min-h-[90vh] w-full bg-[#080813] text-white pt-[8vh]">
   <Body/>
    </div>
     </OpenClose.Provider>
