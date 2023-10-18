@@ -62,7 +62,7 @@ console.log(Video)
 
  function VideoCart({data}) {
   console.log(data)
-    const title ="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, fugiat."
+    const title ="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, fugiatk."
   return (
     <div className='min-h-[50vh] w-[99%] 600px:w-[28vw] '>
         <div className='h-[30vh] w-full  '>
