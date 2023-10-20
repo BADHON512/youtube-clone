@@ -1,87 +1,154 @@
-import React, { useEffect, useState } from 'react'
+import { format } from "timeago.js";
+import { useEffect, useState } from "react";
+import Genres from "./Genres";
+import { AiFillHome } from "react-icons/ai";
+import { PiVideoFill } from "react-icons/pi";
+import { BsPersonVideo2 } from "react-icons/bs";
+import { BiLibrary, BiSolidDownload } from "react-icons/bi";
 
 export default function Body() {
-  const [Video, setVideo] = useState([])
-console.log(Video)
+  const [Video, setVideo] = useState([]);
 
-    const api = 'AIzaSyBqfXD5uLqP8b83t4NqgRme6O2-vU-2lQU'; // Replace with your actual API key
-    const url = "https://www.googleapis.com/youtube/v3/videos?";
-    const channel = "https://www.googleapis.com/youtube/v3/channels?";
-    
-    useEffect(() => {
-      // Fetch a list of videos
-      fetch(url + new URLSearchParams({
-        key: api,
-        part: 'snippet',
-        chart: 'mostPopular',
-        maxResults:50,
-        regionCode: 'BD',
+  const api = "AIzaSyBqfXD5uLqP8b83t4NqgRme6O2-vU-2lQU"; // Replace with your actual API key
+  const url = "https://www.googleapis.com/youtube/v3/videos?";
+  const channel = "https://www.googleapis.com/youtube/v3/channels?";
+
+  useEffect(() => {
+    // Fetch a list of videos
+    fetch(
+      url +
+        new URLSearchParams({
+          key: api,
+          part: "snippet",
+          chart: "mostPopular",
+          maxResults: 50,
+          regionCode: "BD",
+        })
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        data.items.forEach((el) => getChannelIcon(el));
+      }); // Assuming you want the first video
+  }, []); // Empty dependency array for running only once
+
+  const getChannelIcon = (video_data) => {
+    fetch(
+      channel +
+        new URLSearchParams({
+          key: api,
+          part: "snippet",
+          id: video_data.snippet.channelId,
+        })
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        video_data.channelThumbnail =
+          data.items[0].snippet.thumbnails.default.url;
+
+        setVideo((prevVideo) => [...prevVideo, video_data]);
+      });
+  };
+
+  return (
+    <div className="p-3 min-h-[90vh] w-full  ">
+     
+
+      <div className="flex gap-x-2 "> 
+        <div className="h-[50vh] w-[8vw]">
+        <div className="h-[50vh] w-[8vw] fixed">
+
+        <div className="mt-3 flex items-center flex-col w-full">
+  
+          <div className=" flex flex-col items-center  hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+            <AiFillHome size={20} />
+            <h1 className="text-[12px]">Home</h1>
+          </div>
+
+          <div className=" flex flex-col items-center mt-2 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+            <PiVideoFill size={25} />
+            <h1 className="text-[12px]">Shorts</h1>
+          </div>
+
+          <div className=" flex flex-col items-center mt-2 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+            <BsPersonVideo2 size={25} />
+            <h1 className="text-[12px]">Subscriptions</h1>
+          </div>
+
+
+          <div className="flex flex-col items-center mt-2 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+            <BiLibrary size={25} />
+            <h1 className="text-[12px]">Library</h1>
+          </div>
+
+          <div className=" flex flex-col items-center mt-2  hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+          <BiSolidDownload size={25} />
+            <h1 className="text-[12px]">Downloads</h1>
+          </div>
         
-      }))
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data)
-          setVideo([data.items])  
-           
-         
-        })// Assuming you want the first video
-    
-    }, []); // Empty dependency array for running only once
-  
-    // const getChannelIcon = (video_data) => {
-    //   fetch(channel + new URLSearchParams({
-    //     key: api,
-    //     part: 'snippet',
-    //     id: video_data.snippet.channelId
-    //   }))
-    //     .then((res) => res.json())
-    //     .then((data) => {
-    //       console.log(data)
-    //       video_data.channelThumbnail = data.items[0].snippet.thumbnails.default.url;
-    //       setVideo([video_data]); // Update Video as an array with a single item
-    //     });
-    // };
+        </div>
+        </div>
+        </div>
 
-
-  return (
-    <div className='p-5 min-h-[90vh] w-full '>
-      <div className='grid grid-cols-1 gap-2 600px:grid-cols-2 600px:gap-4 800px:grid-cols-3 800px:gap-8'>
-   {
-      
-      Video.map((v,i)=> <VideoCart data={v} key={i}/>)
-  
-   }
+          
+           <div >
+            <div className=" h-[8vh] ">
+              <Genres/>  
+            </div>
+             
+              <div className="grid grid-cols-1 gap-2 600px:grid-cols-2 600px:gap-4 800px:grid-cols-3  justify-items-center ">
+        
+        {Video.map((v, i) => (
+          <VideoCart data={v} key={i} />
+        ))}
       </div>
+           </div>
+    
+      </div>
+      
+     
     </div>
-  )
+  );
 }
 
+function VideoCart({ data }) {
+  console.log(data);
 
-
-
-
- function VideoCart({data}) {
-  console.log(data)
-    const title ="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, fugiatk."
+  const title = data.snippet.title;
   return (
-    <div className='min-h-[50vh] w-[99%] 600px:w-[28vw] '>
-        <div className='h-[30vh] w-full  '>
-            <img src={data.channelThumbnail} className='rounded-lg h-full w-full' alt="" />
+    <div className="min-h-[50vh] w-[99%] 600px:w-[28vw] cursor-pointer">
+      <a href={`https://www.youtube.com/watch?v=${data.id}`}>
+        <div className="h-[30vh] w-full  ">
+          <img
+            src={data.snippet.thumbnails.maxres.url}
+            className="rounded-lg h-full w-full "
+            alt=""
+          />
         </div>
-       <div className='mt-2 p-1 flex'>
-       <img src="/src/assets/7.jpg" className=' h-[50px] w-[50px] rounded-full object-cover' alt="" />
-       <div>
-        <h1 className='font-semibold mx-2 '>{title.slice(0 ,50)+"..."}</h1>
-        <h1 className='font-semibold   text-[#817e7ef1] text-[17px] mt-1'>{data.channelTitle}</h1>
+      </a>
+      <div className="mt-2 p-1 flex">
+        <img
+          src={data.channelThumbnail}
+          className=" h-[50px] w-[50px] rounded-full object-cover"
+          alt=""
+        />
+        <div>
+          <h1 className="font-semibold mx-2 ">{title.slice(0, 50) + "..."}</h1>
+          <h1 className="font-semibold   text-[#817e7ef1] text-[17px] mt-1">
+            {data.snippet.channelTitle}
+          </h1>
 
-        <div className='flex gap-x-2 '>
-        <h1 className='font-semibold   text-[#817e7ef1]  mt-1'>697k Views</h1>.
-        <h1 className='font-semibold   text-[#817e7ef1]  mt-1'>59 minutes ago</h1>
+          <div className="flex gap-x-2 ">
+            <h1 className="font-semibold   text-[#817e7ef1]  mt-1">
+              697k Views
+            </h1>
+            .
+            <h1 className="font-semibold   text-[#817e7ef1]  mt-1">
+              {format(data?.snippet?.publishedAt)}
+            </h1>
+          </div>
         </div>
-       </div>
-       </div>
-       <div></div>
+      </div>
+      <div></div>
     </div>
-  )
+  );
 }
-

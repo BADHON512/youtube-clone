@@ -25,7 +25,7 @@ export default function SideMenu() {
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: -100, opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-[#050404] h-[92vh] w-[50vw] 800px:w-[20vw] shadow-2xl fixed p-3 overflow-y-auto "
+        className="bg-[#050404] h-[92vh] w-[50vw] 800px:w-[20vw] shadow-2xl fixed p-3 mt-12 overflow-y-auto "
        ref={ref}
       >
         <div className="space-y-3">

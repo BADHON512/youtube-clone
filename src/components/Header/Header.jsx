@@ -33,6 +33,7 @@ export default function Header() {
             <div className="w-full flex items-center h-full  ">
               <div className="relative w-full -z-1">
                 <input
+                required
                   value={Search}
                   onChange={(e) => setSearch(e.target.value)}
                   placeholder="Search"
@@ -47,11 +48,13 @@ export default function Header() {
                 )}
               </div>
 
+              <a  href={Search.length>0?`https://www.youtube.com/results?search_query=${Search}`:""}>
               <div className="h-[35px] bg-[#212121]  w-16 border border-[#acabab79] rounded-r-full cursor-pointer">
-                <div className="h-full w-full flex justify-center items-center">
+                <div role="submit" className="h-full w-full flex justify-center items-center">
                   <AiOutlineSearch size={20} color="" />
                 </div>
               </div>
+              </a>
             </div>
 
             <div  onClick={()=>badhon(2)} className="h-[35px] w-[40px] bg-[#524f4f52] hover:bg-[#696767a8] cursor-pointer rounded-full flex justify-center items-center">
@@ -67,16 +70,16 @@ export default function Header() {
               <BiSolidVideoPlus size={25} onClick={()=>badhon(3)} />
             </div>
 
-            <div className="h-[40px] w-[40px] hover:bg-[#acaaaa52] ] cursor-pointer rounded-full flex justify-center items-center relative">
+            <div onClick={()=>badhon(4)} className="h-[40px] w-[40px] hover:bg-[#acaaaa52] ] cursor-pointer rounded-full flex justify-center items-center relative">
               {" "}
-              <IoMdNotifications size={25} onClick={()=>badhon(4)} />
+              <IoMdNotifications size={25}  />
               <div className="absolute h-4 w-5 top-1 right-1 rounded-full flex justify-center items-center bg-[#ff1818]">
                 <h1 className="text-[13px] font-semibold">9+</h1>
               </div>
             </div>
-            <div className="h-[40px] w-[40px] hover:bg-[#acaaaa52] ] cursor-pointer rounded-full flex justify-center items-center">
+            <div onClick={()=>badhon(5)} className="h-[40px] w-[40px] hover:bg-[#acaaaa52] ] cursor-pointer rounded-full flex justify-center items-center">
               {" "}
-              <IoMdNotifications size={25} onClick={()=>badhon(5)} />
+              <IoMdNotifications size={25}  />
             </div>
           </div>
           {/* header last part end */}
