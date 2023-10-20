@@ -15,7 +15,7 @@ const [Color, setColor] = useState(0)
      </div>
 
      <div onClick={()=>setColor(3)} className={`h-[4vh] min-w-[5vw] rounded-md ${Color==3?"bg-[#fff5f5d7]  text-black ":"bg-[#e0d6d62d] hover:bg-[#e0d6d665] transition  duration-400 ease-in-out "} flex justify-center items-center text-white  cursor-pointer px-2 `}>
-     <h1 className="text-sm">Emiway Bantai</h1>
+     <h1 className="text-sm"> Bantai</h1>
      </div>
 
      <div onClick={()=>setColor(4)} className={`h-[4vh] min-w-[5vw] rounded-md ${Color==4?"bg-[#fff5f5d7]  text-black ":"bg-[#e0d6d62d] hover:bg-[#e0d6d665] transition  duration-400 ease-in-out "} flex justify-center items-center text-white  cursor-pointer px-2 `}>

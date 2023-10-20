@@ -51,61 +51,75 @@ export default function Body() {
 
   return (
     <div className="p-3 min-h-[90vh] w-full  ">
-     
+      <div className="flex gap-x-2 ">
+        <div className="h-[50vh] w-[8vw] hidden 800px:block">
+          <div className="h-[50vh] w-[8vw] fixed">
+            <div className="mt-3 flex items-center flex-col w-full ">
+              <div className=" flex flex-col items-center  hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+                <AiFillHome size={20} />
+                <h1 className="text-[12px]">Home</h1>
+              </div>
 
-      <div className="flex gap-x-2 "> 
-        <div className="h-[50vh] w-[8vw]">
-        <div className="h-[50vh] w-[8vw] fixed">
+              <div className=" flex flex-col items-center mt-2 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+                <PiVideoFill size={20} />
+                <h1 className="text-[12px]">Shorts</h1>
+              </div>
 
-        <div className="mt-3 flex items-center flex-col w-full">
-  
-          <div className=" flex flex-col items-center  hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
-            <AiFillHome size={20} />
-            <h1 className="text-[12px]">Home</h1>
-          </div>
+              <div className=" flex flex-col items-center mt-2 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+                <BsPersonVideo2 size={20} />
+                <h1 className="text-[12px]">Subscriptions</h1>
+              </div>
 
-          <div className=" flex flex-col items-center mt-2 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
-            <PiVideoFill size={25} />
-            <h1 className="text-[12px]">Shorts</h1>
-          </div>
+              <div className="flex flex-col items-center mt-2 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+                <BiLibrary size={20} />
+                <h1 className="text-[12px]">Library</h1>
+              </div>
 
-          <div className=" flex flex-col items-center mt-2 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
-            <BsPersonVideo2 size={25} />
-            <h1 className="text-[12px]">Subscriptions</h1>
-          </div>
-
-
-          <div className="flex flex-col items-center mt-2 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
-            <BiLibrary size={25} />
-            <h1 className="text-[12px]">Library</h1>
-          </div>
-
-          <div className=" flex flex-col items-center mt-2  hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
-          <BiSolidDownload size={25} />
-            <h1 className="text-[12px]">Downloads</h1>
-          </div>
-        
-        </div>
-        </div>
-        </div>
-
-          
-           <div >
-            <div className=" h-[8vh] ">
-              <Genres/>  
+              <div className=" flex flex-col items-center mt-2  hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+                <BiSolidDownload size={20} />
+                <h1 className="text-[12px]">Downloads</h1>
+              </div>
             </div>
-             
-              <div className="grid grid-cols-1 gap-2 600px:grid-cols-2 600px:gap-4 800px:grid-cols-3  justify-items-center ">
-        
-        {Video.map((v, i) => (
-          <VideoCart data={v} key={i} />
-        ))}
+          </div>
+        </div>
+
+        <div>
+          <div className=" h-[8vh] ">
+            <Genres />
+          </div>
+
+          <div className="grid grid-cols-1 gap-2 600px:grid-cols-2 600px:gap-4 800px:grid-cols-3  justify-items-center ">
+            {Video.map((v, i) => (
+              <VideoCart data={v} key={i} />
+            ))}
+          </div>
+        </div>
       </div>
-           </div>
-    
+      <div className="800px:hidden">
+        <div className=" h-[10vh] w-full bg-[#000000] fixed bottom-0 ">
+          <div className="flex gap-x-2 justify-between p-3  w-full  ">
+            <div className=" flex flex-col items-center  hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+              <AiFillHome size={20} />
+              <h1 className="text-[12px]">Home</h1>
+            </div>
+
+            <div className=" flex flex-col items-center  hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+              <PiVideoFill size={20} />
+              <h1 className="text-[12px]">Shorts</h1>
+            </div>
+
+            <div className=" flex flex-col items-center  hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
+              <BsPersonVideo2 size={20} />
+              <h1 className="text-[12px]">Subscriptions</h1>
+            </div>
+
+            <div className="flex flex-col items-center  hover:bg-[#92898969] rounded-md p-1 cursor-pointer mr-2">
+              <BiLibrary size={20} />
+              <h1 className="text-[12px]">Library</h1>
+            </div>
+          </div>
+        </div>
       </div>
-      
-     
     </div>
   );
 }
