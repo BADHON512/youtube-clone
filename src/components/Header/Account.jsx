@@ -17,18 +17,18 @@ import { RiFeedbackLine } from "react-icons/ri";
 
 export default function Account() {
   return (
-    <div className="bg-[#282828] h-[92vh] w-[50vw] 800px:w-[27vw] rounded-md text-white shadow-2xl fixed top-12 right-2 800px:right-10 overflow-y-scroll  pb-1 ">
+    <div className="bg-[#282828] h-[92vh] w-[50vw] 800px:w-[27vw] rounded-md text-white shadow-2xl fixed top-12 right-2 z-10 800px:right-10 overflow-y-scroll  pb-1 ">
       <div className="p-3">
         <div className="w-full flex gap-x-3">
           <div className="w-[50px]">
             <img
-              src={"/src/assets/7.jpg"}
+              src={"/assets/badhon .png"}
               className="h-[50px] w-[50px] rounded-full object-cover"
               alt="errro"
             />
           </div>
           <div>
-            <h1 className="text-sm ">HM Naiyem</h1>
+            <h1 className="text-sm ">BADHON</h1>
             <p className="text-sm ">@mdbadhon5858</p>
             <a
               href=""

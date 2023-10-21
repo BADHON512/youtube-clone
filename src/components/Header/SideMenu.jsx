@@ -11,22 +11,22 @@ import { BiSolidDownload, BiLibrary, BiSolidHelpCircle } from "react-icons/bi";
 
 export default function SideMenu() {
   const [first, setfirst] = useState();
-  const ref = useRef(null)
+  const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "end end"]
-  })
+    offset: ["start end", "end end"],
+  });
 
   return (
     <>
       <motion.div
-       style={{ pathLength: scrollYProgress }}
+        style={{ pathLength: scrollYProgress }}
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: -100, opacity: 0 }}
         transition={{ duration: 0.5 }}
-        className="bg-[#050404] h-[92vh] w-[50vw] 800px:w-[20vw] shadow-2xl fixed p-3 mt-12 overflow-y-auto "
-       ref={ref}
+        className="bg-[#050404] h-[92vh] w-[50vw] 800px:w-[20vw] shadow-2xl fixed p-3 mt-12 overflow-y-auto z-20 "
+        ref={ref}
       >
         <div className="space-y-3">
           <div className="flex items-center gap-x-5 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
@@ -116,7 +116,7 @@ export default function SideMenu() {
             <div className="flex items-center gap-x-5 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
               <div className="h-[20px] w-[20px] rounded-full">
                 <img
-                  src="/src/assets/4.jpg"
+                  src="/assets/4.jpg"
                   alt=""
                   className="h-full w-full rounded-full"
                 />
@@ -127,7 +127,7 @@ export default function SideMenu() {
             <div className="flex items-center gap-x-5 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
               <div className="h-[20px] w-[20px] rounded-full">
                 <img
-                  src="/src/assets/9.jpg"
+                  src="/assets/9.jpg"
                   alt=""
                   className="h-full w-full rounded-full"
                 />
@@ -137,7 +137,7 @@ export default function SideMenu() {
             <div className="flex items-center gap-x-5 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
               <div className="h-[20px] w-[20px] rounded-full">
                 <img
-                  src="/src/assets/6.jpg"
+                  src="/assets/6.jpg"
                   alt=""
                   className="h-full w-full rounded-full"
                 />
@@ -147,7 +147,7 @@ export default function SideMenu() {
             <div className="flex items-center gap-x-5 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
               <div className="h-[20px] w-[20px] rounded-full">
                 <img
-                  src="/src/assets/3.jpg"
+                  src="/assets/3.jpg"
                   alt=""
                   className="h-full w-full rounded-full"
                 />
@@ -157,7 +157,7 @@ export default function SideMenu() {
             <div className="flex items-center gap-x-5 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
               <div className="h-[20px] w-[20px] rounded-full">
                 <img
-                  src="/src/assets/7.jpg"
+                  src="/assets/7.jpg"
                   alt=""
                   className="h-full w-full rounded-full"
                 />
@@ -167,7 +167,7 @@ export default function SideMenu() {
             <div className="flex items-center gap-x-5 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
               <div className="h-[20px] w-[20px] rounded-full">
                 <img
-                  src="/src/assets/8.jpg"
+                  src="/assets/8.jpg"
                   alt=""
                   className="h-full w-full rounded-full"
                 />
@@ -177,7 +177,7 @@ export default function SideMenu() {
             <div className="flex items-center gap-x-5 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
               <div className="h-[20px] w-[20px] rounded-full">
                 <img
-                  src="/src/assets/2.jpg"
+                  src="/assets/2.jpg"
                   alt=""
                   className="h-full w-full rounded-full"
                 />
@@ -192,7 +192,7 @@ export default function SideMenu() {
             <div className="flex items-center gap-x-5 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
               <div className="h-[20px] w-[20px] rounded-full">
                 <img
-                  src="/src/assets/yo.png"
+                  src="/assets/yo.png"
                   alt=""
                   className="h-full w-full rounded-full"
                 />
@@ -202,7 +202,7 @@ export default function SideMenu() {
             <div className="flex items-center gap-x-5 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
               <div className="h-[20px] w-[20px] rounded-full">
                 <img
-                  src="/src/assets/yo.png"
+                  src="/assets/yo.png"
                   alt=""
                   className="h-full w-full rounded-full"
                 />
@@ -212,7 +212,7 @@ export default function SideMenu() {
             <div className="flex items-center gap-x-5 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
               <div className="h-[20px] w-[20px] rounded-full">
                 <img
-                  src="/src/assets/yo.png"
+                  src="/assets/yo.png"
                   alt=""
                   className="h-full w-full rounded-full"
                 />
@@ -222,7 +222,7 @@ export default function SideMenu() {
             <div className="flex items-center gap-x-5 hover:bg-[#92898969] rounded-md p-1 cursor-pointer">
               <div className="h-[20px] w-[20px] rounded-full">
                 <img
-                  src="/src/assets/yo.png"
+                  src="/assets/yo.png"
                   alt=""
                   className="h-full w-full rounded-full"
                 />
