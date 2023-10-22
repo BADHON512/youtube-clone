@@ -162,7 +162,6 @@ function VideoCart({ data }) {
           </div>
         </div>
       </div>
-   
     </div>
   );
 }
