@@ -8,6 +8,7 @@ import { BiLibrary, BiSolidDownload } from "react-icons/bi";
 
 export default function Body() {
   const [Video, setVideo] = useState([]);
+  console.log(Video)
 
   const api = "AIzaSyBqfXD5uLqP8b83t4NqgRme6O2-vU-2lQU"; // Replace with your actual API key
   const url = "https://www.googleapis.com/youtube/v3/videos?";
@@ -127,13 +128,13 @@ export default function Body() {
 function VideoCart({ data }) {
   console.log(data);
 
-  const title = data.snippet.title;
+  const title = data?.snippet?.title;
   return (
     <div className="min-h-[30vh] w-[99%] 600px:w-[28vw] cursor-pointer ">
-      <a href={`https://www.youtube.com/watch?v=${data.id}`}>
+      <a href={`https://www.youtube.com/watch?v=${data?.id}`}>
         <div className=" 600px:h-[20vh] 1000px:h-[30vh] w-full  ">
           <img
-            src={data.snippet.thumbnails.maxres.url}
+            src={data.snippet?.thumbnails?.maxres?.url}
             className="rounded-lg h-full w-full "
             alt=""
           />
@@ -141,14 +142,14 @@ function VideoCart({ data }) {
       </a>
       <div className="mt-2 p-1 flex">
         <img
-          src={data.channelThumbnail}
+          src={data?.channelThumbnail}
           className=" h-[50px] w-[50px] rounded-full object-cover"
           alt=""
         />
         <div>
           <h1 className="font-semibold mx-2 ">{title.slice(0, 50) + "..."}</h1>
           <h1 className="font-semibold   text-[#817e7ef1] text-[17px] mt-1">
-            {data.snippet.channelTitle}
+            {data.snippet?.channelTitle}
           </h1>
 
           <div className="flex gap-x-2 ">
